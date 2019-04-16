@@ -5,8 +5,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <None Include="Samples.fsx" />
         <Compile Include="Fibonnaci.fs" />
         <Compile Include="Factorial.fs" />
     </ItemGroup>
+
+    <ItemGroup />
 
 </Project>
