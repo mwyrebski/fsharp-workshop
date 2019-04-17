@@ -5,7 +5,7 @@ open Xunit
 
 [<Fact>]
 let ``List value`` () =
-    let value = FIXME
+    let value = [1;2;3]
     
     AssertEqual [1; 2; 3] value
 
@@ -16,7 +16,7 @@ let ``Prepend list with a value`` () =
     
     let result = "pear" :: list
     
-    AssertEqual result FIXME
+    AssertEqual result [ "pear"; "banana"; "apple" ]
 
 
 [<Fact>]
@@ -24,7 +24,7 @@ let ``Concatenate two lists`` () =
     let first = [ "banana"; "apple" ]
     let second = [ "pear"; "cherry" ]
     
-    let result = FIXME
+    let result = first @ second
     
     AssertEqual ["banana"; "apple"; "pear"; "cherry"] result
 
@@ -33,7 +33,7 @@ let ``Concatenate two lists`` () =
 let ``Access list element by index`` () =
     let first = [ "banana"; "apple"; "cherry" ]
     
-    let apple = FIXME
+    let apple = first.[1]
     
     AssertEqual apple "apple"
 
@@ -48,6 +48,6 @@ let ``Filter list items`` () =
     // filter `list` items picking only elements starting with `a`
     let fruitsOnA = List.filter startsWithA list
     
-    AssertEqual fruitsOnA FIXME
+    AssertEqual fruitsOnA [ "apple"; "ananas" ]
 
 

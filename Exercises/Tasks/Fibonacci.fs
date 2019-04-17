@@ -7,7 +7,10 @@ open Xunit
 (* TASK: Implement this function so it returns n-th expected fibonacci number 
 *)
 let rec calculateFibonacci n =
-    FIXME
+    if n < 2 then
+        n
+    else
+        (calculateFibonacci (n-1)) + (calculateFibonacci (n-2))
 
 
 

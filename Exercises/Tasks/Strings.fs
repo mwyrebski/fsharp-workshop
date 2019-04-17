@@ -5,7 +5,7 @@ open Xunit
 
 [<Fact>]
 let ``String value`` () =
-    let value = FIXME
+    let value = "Message"
     
     AssertEqual "Message" value
 
@@ -15,7 +15,7 @@ let ``Strings concatenation`` () =
     let hello = "Hello"
     let world = "World"
     
-    let concatenatedString = FIXME
+    let concatenatedString = hello + " " + world 
     
     AssertEqual "Hello World" concatenatedString
 
