@@ -2,14 +2,19 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
-
+        <OutputType>Exe</OutputType>
         <IsPackable>false</IsPackable>
         <GenerateProgramFile>false</GenerateProgramFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Fibonnaci.Tests.fs" />
-        <Compile Include="Factorial.Tests.fs" />
+        <None Include="Samples.fsx" />
+        <Compile Include="TestHelpers.fs" />
+        <Compile Include="Tasks\Strings.fs" />
+        <Compile Include="Tasks\Lists.fs" />
+        <Compile Include="Tasks\Fibonnaci.fs" />
+        <Compile Include="Tasks\Factorial.fs" />
+        <Compile Include="Tasks\Parentheses.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
@@ -17,10 +22,6 @@
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Excercises\Excercises.fsproj" />
     </ItemGroup>
 
 </Project>

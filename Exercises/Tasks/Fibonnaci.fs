@@ -1,7 +1,13 @@
-module Fibonnaci.Tests
+module Exercises.Fibonnaci
 
-open Excercises
 open Xunit
+
+
+
+let rec calculateFibonnaci n =
+    FIXME
+
+
 
 [<Theory>]
 [<InlineData(0, 0)>]
@@ -14,5 +20,5 @@ open Xunit
 [<InlineData(13, 7)>]
 [<InlineData(21, 8)>]
 let ``Test Fibonnaci calculation`` expected input =
-    let actual = Fibonnaci.calc input
+    let actual = calculateFibonnaci input
     Assert.Equal(expected, actual)

@@ -1,7 +1,14 @@
-module Factorial.Tests
+module Exercises.Factorial
 
-open Excercises
+open Exercises
 open Xunit
+
+
+
+let rec calculateFactorial n =
+    FIXME
+
+
 
 [<Theory>]
 [<InlineData(1, 0)>]
@@ -12,5 +19,5 @@ open Xunit
 [<InlineData(120, 5)>]
 [<InlineData(720, 6)>]
 let ``Test Factorial calculation`` expected input =
-    let actual = Factorial.calc input
+    let actual = calculateFactorial input
     Assert.Equal(expected, actual)
