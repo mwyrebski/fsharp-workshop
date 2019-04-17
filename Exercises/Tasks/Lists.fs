@@ -45,7 +45,8 @@ let ``Filter list items`` () =
     let startsWithA (s: string) =
         s.StartsWith('a')
     
-    let fruitsOnA = list |> List.filter startsWithA
+    // filter `list` items picking only elements starting with `a`
+    let fruitsOnA = List.filter startsWithA list
     
     AssertEqual fruitsOnA FIXME
 
