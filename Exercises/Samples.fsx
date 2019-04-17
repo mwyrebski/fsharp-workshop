@@ -1,4 +1,4 @@
-﻿
+
 // ------------------------------------------
 // Basic data type
 // ------------------------------------------
@@ -24,7 +24,7 @@ let arr2 = [| 1..5 |]
 assert (arr1 = arr2)
 
 // accessing value by index
-let three = arr1.[2]
+let three = arr1.[2]  // complexity: O(1)
 assert (3 = three)
 
 // values in arrays can be changed (mutated)
@@ -37,7 +37,13 @@ arr1.[3] <- 9
 let list1 = [ 1; 2; 3; 4; 5 ]
 let list2 = [ "banana"; "apple"; "cherry" ]
 
-// prepending value to the existing list with ::
+// accessing list element by id
+let five = list1.[4]  // complexity: O(n)
+
+// cannot mutate list items
+// list1.[2] <- 8 
+
+// prepending value to the existing list with `::` (cons operator)
 let list2WithPear = "pear" :: list2
 
 // concatenating lists
@@ -106,6 +112,11 @@ let widerTuple = (1, "one", "uno")
 
 // tuple deconstruction
 let (thirteen, seven) = tuple
+
+
+let (_, Seven) = tuple
+let (_, middle, _) = widerTuple
+
 
 // accessing first and second element with `fst` and `snd`
 let firstTupleValue  = fst tuple
