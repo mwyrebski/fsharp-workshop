@@ -1,12 +1,12 @@
-module Exercises.Fibonnaci
+module Exercises.Fibonacci
 
 open Xunit
 
 
 
-(* TASK: Implement this function so it returns n-th expected fibonnaci number 
+(* TASK: Implement this function so it returns n-th expected fibonacci number 
 *)
-let rec calculateFibonnaci n =
+let rec calculateFibonacci n =
     FIXME
 
 
@@ -21,6 +21,6 @@ let rec calculateFibonnaci n =
 [<InlineData(8, 6)>]
 [<InlineData(13, 7)>]
 [<InlineData(21, 8)>]
-let ``Test Fibonnaci calculation`` expected input =
-    let actual = calculateFibonnaci input
+let ``Test Fibonacci calculation`` expected input =
+    let actual = calculateFibonacci input
     AssertEqual expected actual

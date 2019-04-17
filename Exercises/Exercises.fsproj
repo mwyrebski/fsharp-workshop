@@ -14,7 +14,7 @@
         <Compile Include="Tasks\Lists.fs" />
         <Compile Include="Tasks\Tuples.fs" />
         <Compile Include="Tasks\Records.fs" />
-        <Compile Include="Tasks\Fibonnaci.fs" />
+        <Compile Include="Tasks\Fibonacci.fs" />
         <Compile Include="Tasks\Factorial.fs" />
         <Compile Include="Tasks\Parentheses.fs" />
         <Compile Include="Program.fs" />
