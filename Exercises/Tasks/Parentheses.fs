@@ -29,7 +29,7 @@ let balancedParentheses (input: string) : bool =
 [<InlineData(true, "(())()(()((())))")>]
 let ``Test if single type parentheses are balanced`` expected input =
     let actual = balancedParentheses input
-    Assert.Equal(expected, actual)
+    AssertEqual expected actual
 
 
 
@@ -44,4 +44,4 @@ let ``Test if single type parentheses are balanced`` expected input =
 [<InlineData(true, "{} [] ()")>]
 let ``Test if all kind of parentheses are balanced`` expected input =
     let actual = balancedParentheses input
-    Assert.Equal(expected, actual)
+    AssertEqual expected actual

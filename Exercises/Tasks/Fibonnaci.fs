@@ -4,6 +4,8 @@ open Xunit
 
 
 
+(* TASK: Implement this function so it returns n-th expected fibonnaci number 
+*)
 let rec calculateFibonnaci n =
     FIXME
 
@@ -21,4 +23,4 @@ let rec calculateFibonnaci n =
 [<InlineData(21, 8)>]
 let ``Test Fibonnaci calculation`` expected input =
     let actual = calculateFibonnaci input
-    Assert.Equal(expected, actual)
+    AssertEqual expected actual

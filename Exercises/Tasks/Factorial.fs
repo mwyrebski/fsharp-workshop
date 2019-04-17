@@ -5,6 +5,8 @@ open Xunit
 
 
 
+(* TASK: Implement this function so it returns n-th expected factorial number 
+*)
 let rec calculateFactorial n =
     FIXME
 
@@ -20,4 +22,4 @@ let rec calculateFactorial n =
 [<InlineData(720, 6)>]
 let ``Test Factorial calculation`` expected input =
     let actual = calculateFactorial input
-    Assert.Equal(expected, actual)
+    AssertEqual expected actual

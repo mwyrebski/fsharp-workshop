@@ -28,3 +28,25 @@ let ``Concatenate two lists`` () =
     
     AssertEqual ["banana"; "apple"; "pear"; "cherry"] result
 
+
+[<Fact>]
+let ``Access list element by index`` () =
+    let first = [ "banana"; "apple"; "cherry" ]
+    
+    let apple = FIXME
+    
+    AssertEqual apple "apple"
+
+
+[<Fact>]
+let ``Filter list items`` () =
+    let list = [ "banana"; "apple"; "cherry"; "ananas" ]
+    
+    let startsWithA (s: string) =
+        s.StartsWith('a')
+    
+    let fruitsOnA = list |> List.filter startsWithA
+    
+    AssertEqual fruitsOnA FIXME
+
+
