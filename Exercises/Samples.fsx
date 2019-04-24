@@ -233,7 +233,8 @@ let chooseFruit fruit =
 // more pattern matching examples:
 // - https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/pattern-matching
 // - https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/match-expressions
-
+// good introduction to Discriminated Unions:
+// - https://fsharpforfunandprofit.com/posts/discriminated-unions/
 
 // ------------------------------------------
 // Records
