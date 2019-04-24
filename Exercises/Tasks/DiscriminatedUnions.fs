@@ -58,7 +58,7 @@ module ``Pattern Matching`` =
         AssertEqual "It's the fastest known car" (check yellowLamborgini)
 
     [<Fact>]
-    let ``Find vehicles with top speed divisible by 2``() =
+    let ``Find motorbikes with top speed divisible by 2``() =
         let findSpecificVehicle vehicle =
             match vehicle with
             | Motorbike(topSpeed = speed) when speed % 2 = 0 -> true
