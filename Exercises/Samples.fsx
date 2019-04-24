@@ -15,6 +15,7 @@ printfn "%s, %d" str num
 let mutable mut = -1
 mut <- 5 // setting new value for 'mut'
 
+let ``Names with double backticks can contain some 'special' characters: !#$ 🐇`` = 1
 
 // Array
 // -----
@@ -171,12 +172,12 @@ type Animal =
     | Monkey
     | Parrot
 
-// single-case discriminated union
+// Single-case discriminated union
+
 type Email =
     | Email of string
-
-type CustomerId =
-    | CustomerId of int
+// can be also written in a single line:
+type CustomerId = CustomerId of int
 
 
 // Pattern matching
@@ -192,7 +193,7 @@ let calculateArea shape =
     | Rectangle(x, y) -> x * y
 
 // ^ can be also written as:
-let calculateArea' = function
+let calculateArea2 = function
     | Square x -> x * x
     | Rectangle(x, y) -> x * y
 
@@ -200,11 +201,13 @@ let calculateArea' = function
 let matchList list =
     match list with
     | [ _; second; third ] -> second + third
+    | [ _; -3 ] -> -3
     | head :: tail -> head
     | _ -> -1
 
 9 = matchList [ 2; 4; 5 ] // true
 2 = matchList [ 2; 3; 4 ] // false
+23 = matchList [ 23; 3; 4; 9 ] // true
 -1 = matchList [] // true
 
 // Matching named fields
@@ -225,8 +228,7 @@ let chooseFruit fruit =
     | Apple(color = "red") -> printfn "Nice red apple"
     | Apple(color, weight) when color = "yellow" && weight < 70.0 -> printfn "Small yellow apple"
     | Strawberry _ -> printfn "A strawberry"
-    | Banana _ -> printfn "A banana"
-    | Apple _ -> printfn "An apple"
+    | Banana _ | Apple _ -> printfn "A fruit"
 
 // more pattern matching examples:
 // - https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/pattern-matching
@@ -259,9 +261,35 @@ type Contact =
         mutable Age: int // this field is mutable
     }
 
+// Comparing
+// ---------
+
 type Point = { X: float; Y: float; Z: float; }
 let point1 = { X = 1.0; Y = 1.0; Z = 1.0 }
 
 // create new value based on another with only one value changed
-let point2 = { point1 with Z = 2.0 }
+let pointWithDifferentZ = { point1 with Z = 2.0 }
 
+// Point is a reference type and can be assigned to a different value (by reference)
+let point2 = point1
+System.Object.ReferenceEquals(point1, point2) // true
+
+// when comparing whole stuctures are checked
+let comparePoint1 = { X = 1.; Y = 2.; Z = 3. }
+let comparePoint2 = { X = 1.; Y = 2.; Z = 3. }
+
+comparePoint1 = comparePoint2 // true
+
+
+// Structs
+// -------
+// - struct record types are .NET ValueTypes
+// - their values are always copied and not passed by reference
+
+[<Struct>]
+type StructPoint = { X: float; Y: float; Z: float; }
+
+let structPoint1 = { X = 1.0; Y = 1.0; Z = 1.0 }
+let structPoint2 = structPoint1
+
+System.Object.ReferenceEquals(structPoint1, structPoint2) // false
