@@ -36,9 +36,12 @@ module ``Pattern Matching`` =
         | Motorbike of topSpeed: int * make: Brand * color: Color
 
     let whiteSuzuki = Motorbike(220, Suzuki, White)
+    let greenBMW = Motorbike(305, BMW, Green)
+    let blackBMW = Motorbike(298, BMW, Black)
     let redHonda = Car(307, Honda, "NSX", Red)
     let blackHonda = Car(227, Honda, "Civic R", Black)
-    let yellowLamborgini = Car(484, Lamborgini, "HENNESSEY VENOM F5", Yellow)
+    let yellowLamborgini = Car(484, Lamborgini, "Hennessey Venom F5", Yellow)
+    let allVehicles = [ whiteSuzuki; greenBMW; blackBMW; redHonda; blackHonda; yellowLamborgini ]
 
     [<Fact>]
     let ``Check for fastest vehicle``() =
@@ -53,4 +56,27 @@ module ``Pattern Matching`` =
         AssertEqual "Red cars are very fast" (check redHonda)
         AssertEqual "Some car" (check blackHonda)
         AssertEqual "It's the fastest known car" (check yellowLamborgini)
+
+    [<Fact>]
+    let ``Find vehicles with top speed divisible by 2``() =
+        let findSpecificVehicle vehicle =
+            match vehicle with
+            | Motorbike(topSpeed = speed) when speed % 2 = 0 -> true
+            | Car _ -> false
+            | Motorbike _ -> false
+        let actual = List.filter findSpecificVehicle allVehicles
+
+        AssertEqual actual FIXME
+
+    [<Fact>]
+    let ``Find vehicles with top speed over 300``() =
+        let findFastest vehicle =
+            match vehicle with
+            (* FIXME *)
+            | Car _ -> false
+            | Motorbike _ -> false
+
+        let actual = List.filter findFastest allVehicles
+
+        AssertEqual [ greenBMW; redHonda; yellowLamborgini ] actual
 
