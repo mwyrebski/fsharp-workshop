@@ -199,11 +199,13 @@ let calculateArea' = function
 // matching lists (cons pattern)
 let matchList list =
     match list with
+    | [ _; second; third ] -> second + third
     | head :: tail -> head
     | _ -> -1
 
-assert (2 = (matchList [ 2; 3; 4 ]))
-assert (-1 = (matchList []))
+9 = matchList [ 2; 4; 5 ] // true
+2 = matchList [ 2; 3; 4 ] // false
+-1 = matchList [] // true
 
 // Matching named fields
 
